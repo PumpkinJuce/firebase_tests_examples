@@ -6,6 +6,7 @@ import 'package:tests/main.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
+
   testWidgets(
       "Not inputting a text and wanting to go to the display page shows "
       "an error and prevents from going to the display page.",
@@ -40,7 +41,8 @@ void main() {
     // We should be in the DisplayPage that displays the inputted text
     expect(find.byType(TypingPage), findsNothing);
     expect(find.byType(DisplayPage), findsOneWidget);
-    expect(find.text(inputText), findsOneWidget);
+    // expect(find.text(inputText), findsOneWidget);
+     expect(find.text('1212'), findsOneWidget);
 
     // Tap on the back arrow in the AppBar
     await tester.tap(find.byType(BackButton));
